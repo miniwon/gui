@@ -6,6 +6,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.Calendar;
 
 import javax.swing.ImageIcon;
@@ -17,7 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class InfoView {
+public class InfoView2 {
 
 	// 1. 멤버변수 선언
 	JFrame f;
@@ -27,7 +29,7 @@ public class InfoView {
 	JButton bAdd, bShow, bSearch, bDelete, bCancel, bExit;
 
 	// 2. 멤버변수 객체 생성
-	InfoView() {
+	InfoView2() {
 		f = new JFrame("DBTest");
 		// lbName = new JLabel("Name");
 		// lbID = new JLabel("ID");
@@ -117,6 +119,26 @@ public class InfoView {
 				JOptionPane.showMessageDialog(null, "이벤트 발생 Add");
 			}
 		});
+		
+		tfID.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				getJuminInfo();
+			}
+		});
+		
+		tfID.addFocusListener(new FocusListener() {
+			
+			@Override
+			public void focusLost(FocusEvent e) {
+				getJuminInfo();
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {				
+			}
+		});
 		bShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "이벤트 발생 Show");
@@ -141,11 +163,11 @@ public class InfoView {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "이벤트 발생 Exit");
 			}
-		});
+		});}
 
 		// 주민등록번호 입력 창에 엔터 쳤을 때
-		tfID.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+
+			public void getJuminInfo() {
 				String jumin = tfID.getText();		// tfID에 입력된 문자열을 jumin 변수에 저장
 				if (jumin.length() != 14) {			// 주민등록번호는 6자리-7자리 도합 14자리
 					JOptionPane.showMessageDialog(null, "- 을 포함한 14자를 입력해 주세요");
@@ -198,12 +220,11 @@ public class InfoView {
 
 				}
 			}
-		});
-	}
+
 
 	public static void main(String[] args) {
 
-		InfoView info = new InfoView();
+		InfoView2 info = new InfoView2();
 		info.addLayout();
 		info.eventProc();
 

@@ -1,0 +1,13 @@
+
+* 이벤트
+	- MouseEvent
+	- WindowEvent
+	- KeyEvent
+	- FocusEvent
+	- 
+	
+* ActionEvent: 자주 사용하는 이벤트
+	- 버튼 클릭 시
+	- 메뉴 클릭 시
+	- 리스트(콤보 박스) 더블 클릭 시
+	- 텍스트필드
