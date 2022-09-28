@@ -1,13 +1,13 @@
-package testHbg;
+package testHbg01;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PanelDrk extends JPanel {
+public class PanelSet extends JPanel {
 	
-	JLabel pHbg = new JLabel("확인용5");
+	JLabel pHbg = new JLabel("확인용3");
 	
-	public PanelDrk () {
+	public PanelSet () {
 		addLayout();
 		eventProc();
 		}

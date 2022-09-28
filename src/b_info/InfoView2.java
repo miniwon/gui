@@ -325,10 +325,6 @@ public class InfoView2 {			// 수정하는 파일
 		// 해당 전화번호가 있으면 그 해당하는 PersonVO를 리스트에서 삭제
 		// (참고) 삭제하고 나서 break로 반복문 끝내기
 	}
-	
-	void deleteData() {
-		
-	}
 
 	public static void main(String[] args) {
 

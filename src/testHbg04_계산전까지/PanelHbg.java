@@ -1,4 +1,4 @@
-package testHbg;
+package testHbg04_계산전까지;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -14,10 +14,9 @@ public class PanelHbg extends JPanel {
 	MainTest parent;
 
 	// 1. 멤버변수 선언
-	JButton[] bts;		// 반복문 사용을 위해 버튼을 배열로 선언
-						// 지역 변수이기 때문에 같은 이름을 써서 내용만 바꿔도 내용이 덮어씌워지지 않는다
-	String[] menu = new String[] {"싸이버거", "휠렛버거", "할라피뇨통살버거", "화이트갈릭버거", "불고기버거", "갈릭바베큐치킨버거"};
-	int[] price = new int[] {5000, 5000, 6000, 6000, 7000, 7500};
+	JButton[] btsHbg;		// 반복문 사용을 위해 버튼을 배열로 선언
+	String[] menuHbg = new String[] {"싸이버거", "휠렛버거", "할라피뇨통살버거", "화이트갈릭버거", "불고기버거", "갈릭바베큐치킨버거"};
+	int[] priceHbg = new int[] {5000, 5000, 6000, 6000, 7000, 7500};
 	
 //	ArrayList<MenuVO> list = new ArrayList<MenuVO>();
 
@@ -26,13 +25,13 @@ public class PanelHbg extends JPanel {
 		parent = mainTest;
 
 		// 버튼의 개수를 지정
-		bts = new JButton[6];
+		btsHbg = new JButton[6];
 
 		// 버튼 배열 안에 버튼 생성
-		for ( int i = 0; i < bts.length; i++) {
-			bts[i] = new JButton(menu[i]);
-			bts[i].setHorizontalTextPosition(JButton.CENTER);
-			bts[i].setVerticalTextPosition(JButton.BOTTOM);
+		for ( int i = 0; i < btsHbg.length; i++) {
+			btsHbg[i] = new JButton(menuHbg[i]);
+			btsHbg[i].setHorizontalTextPosition(JButton.CENTER);
+			btsHbg[i].setVerticalTextPosition(JButton.BOTTOM);
 		}
 
 		// 이미지 삽입을 위해 .png 파일을 ImageIcon에 대입
@@ -44,12 +43,12 @@ public class PanelHbg extends JPanel {
 		ImageIcon img6 = new ImageIcon("src/testHbgImgSource/6_갈릭바베큐치킨버거.png");
 
 		// 버튼에 이미지 삽입
-		bts[0].setIcon(img1);
-		bts[1].setIcon(img2);
-		bts[2].setIcon(img3);
-		bts[3].setIcon(img4);
-		bts[4].setIcon(img5);
-		bts[5].setIcon(img6);
+		btsHbg[0].setIcon(img1);
+		btsHbg[1].setIcon(img2);
+		btsHbg[2].setIcon(img3);
+		btsHbg[3].setIcon(img4);
+		btsHbg[4].setIcon(img5);
+		btsHbg[5].setIcon(img6);
 
 		// 메서드 실행
 		addLayout();
@@ -62,18 +61,18 @@ public class PanelHbg extends JPanel {
 		setLayout(new GridLayout(2, 3, 10, 10));
 
 		// 버튼 삽입
-		for ( int i = 0; i < bts.length; i++) {
-			add(bts[i]);
+		for ( int i = 0; i < btsHbg.length; i++) {
+			add(btsHbg[i]);
 		}
 	} // addLayout()
 	void eventProc() {
 		
 		// 메뉴 버튼이 눌렸을 때
-		for ( int i = 0; i < bts.length; i++ ) {
+		for ( int i = 0; i < btsHbg.length; i++ ) {
 			String convert = Integer.toString(i);
-			bts[i].addActionListener(new ActionListener() {
+			btsHbg[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					MenuVO menu = new MenuVO(bts[Integer.parseInt(convert)].getText(), price[Integer.parseInt(convert)]);
+					MenuVO menu = new MenuVO(btsHbg[Integer.parseInt(convert)].getText(), priceHbg[Integer.parseInt(convert)]);
 					parent.list.add(menu);
 					selectAll();
 				}

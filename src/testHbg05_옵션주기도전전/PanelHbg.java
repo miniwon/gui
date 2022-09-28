@@ -1,4 +1,4 @@
-package testHbg;
+package testHbg05_옵션주기도전전;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,19 +9,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class PanelChk extends JPanel {
+public class PanelHbg extends JPanel {
 	
 	MainTest parent;
 
 	// 1. 멤버변수 선언
 	JButton[] bts;		// 반복문 사용을 위해 버튼을 배열로 선언
-	String[] menu = new String[] {"후라이드싸이순살", "간장마늘싸이순살", "맘스양념싸이순살", "치파오싸이순살", "군옥수수뿌치싸이순살", "허니버터뿌치싸이순살"};
-	int[] price = new int[] {16000, 17000, 17000, 18000, 18000, 18500};
+						// 지역 변수이기 때문에 같은 이름을 써서 내용만 바꿔도 내용이 덮어씌워지지 않는다
+	String[] menu = new String[] {"싸이버거", "휠렛버거", "할라피뇨통살버거", "화이트갈릭버거", "불고기버거", "갈릭바베큐치킨버거"};
+	int[] price = new int[] {5000, 5000, 6000, 6000, 7000, 7500};
 	
 //	ArrayList<MenuVO> list = new ArrayList<MenuVO>();
 
 	// 2. 멤버변수 객체 생성(생성자 안에서)
-	public PanelChk (MainTest mainTest) {
+	public PanelHbg (MainTest mainTest) {
 		parent = mainTest;
 
 		// 버튼의 개수를 지정
@@ -35,12 +36,12 @@ public class PanelChk extends JPanel {
 		}
 
 		// 이미지 삽입을 위해 .png 파일을 ImageIcon에 대입
-		ImageIcon img1 = new ImageIcon("src/testHbgImgSource/1_후라이드싸이순살.png");
-		ImageIcon img2 = new ImageIcon("src/testHbgImgSource/2_간장마늘싸이순살.png");
-		ImageIcon img3 = new ImageIcon("src/testHbgImgSource/3_맘스양념싸이순살.png");
-		ImageIcon img4 = new ImageIcon("src/testHbgImgSource/4_치파오싸이순살.png");
-		ImageIcon img5 = new ImageIcon("src/testHbgImgSource/5_군옥수수뿌치싸이순살.png");
-		ImageIcon img6 = new ImageIcon("src/testHbgImgSource/6_허니버터뿌치싸이순살.png");
+		ImageIcon img1 = new ImageIcon("src/testHbgImgSource/1_싸이버거.png");
+		ImageIcon img2 = new ImageIcon("src/testHbgImgSource/2_휠렛버거.png");
+		ImageIcon img3 = new ImageIcon("src/testHbgImgSource/3_할라피뇨통살버거.png");
+		ImageIcon img4 = new ImageIcon("src/testHbgImgSource/4_화이트갈릭버거.png");
+		ImageIcon img5 = new ImageIcon("src/testHbgImgSource/5_불고기버거.png");
+		ImageIcon img6 = new ImageIcon("src/testHbgImgSource/6_갈릭바베큐치킨버거.png");
 
 		// 버튼에 이미지 삽입
 		bts[0].setIcon(img1);
@@ -88,6 +89,8 @@ public class PanelChk extends JPanel {
 			parent.shoppingcartMenuTA.append(vo.getMenu()+"\n");
 			parent.shoppingcartPriceTA.append(Integer.toString(vo.getPrice())+"\n");
 		}
+
+		
 		
 	} // selectAll()
 

@@ -1,4 +1,4 @@
-package testHbg;
+package testHbg05_옵션주기도전전;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,19 +9,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class PanelChk extends JPanel {
+public class PanelSet extends JPanel {
 	
 	MainTest parent;
 
 	// 1. 멤버변수 선언
 	JButton[] bts;		// 반복문 사용을 위해 버튼을 배열로 선언
-	String[] menu = new String[] {"후라이드싸이순살", "간장마늘싸이순살", "맘스양념싸이순살", "치파오싸이순살", "군옥수수뿌치싸이순살", "허니버터뿌치싸이순살"};
-	int[] price = new int[] {16000, 17000, 17000, 18000, 18000, 18500};
+	String[] menu = new String[] {"콩룡키즈세트", "싱글떡강정세트", "싱글통다리세트", "커플떡강정세트", "커플통다리세트", "커플치킨세트"};
+	int[] price = new int[] {26000, 27000, 21000, 28000, 28000, 13500};
 	
 //	ArrayList<MenuVO> list = new ArrayList<MenuVO>();
 
 	// 2. 멤버변수 객체 생성(생성자 안에서)
-	public PanelChk (MainTest mainTest) {
+	public PanelSet (MainTest mainTest) {
 		parent = mainTest;
 
 		// 버튼의 개수를 지정
@@ -35,12 +35,12 @@ public class PanelChk extends JPanel {
 		}
 
 		// 이미지 삽입을 위해 .png 파일을 ImageIcon에 대입
-		ImageIcon img1 = new ImageIcon("src/testHbgImgSource/1_후라이드싸이순살.png");
-		ImageIcon img2 = new ImageIcon("src/testHbgImgSource/2_간장마늘싸이순살.png");
-		ImageIcon img3 = new ImageIcon("src/testHbgImgSource/3_맘스양념싸이순살.png");
-		ImageIcon img4 = new ImageIcon("src/testHbgImgSource/4_치파오싸이순살.png");
-		ImageIcon img5 = new ImageIcon("src/testHbgImgSource/5_군옥수수뿌치싸이순살.png");
-		ImageIcon img6 = new ImageIcon("src/testHbgImgSource/6_허니버터뿌치싸이순살.png");
+		ImageIcon img1 = new ImageIcon("src/testHbgImgSource/1_공룡키즈세트.png");
+		ImageIcon img2 = new ImageIcon("src/testHbgImgSource/2_싱글떡강정세트.png");
+		ImageIcon img3 = new ImageIcon("src/testHbgImgSource/3_싱글통다리세트.png");
+		ImageIcon img4 = new ImageIcon("src/testHbgImgSource/4_커플떡강정세트.png");
+		ImageIcon img5 = new ImageIcon("src/testHbgImgSource/5_커플통다리세트.png");
+		ImageIcon img6 = new ImageIcon("src/testHbgImgSource/6_커플치킨세트.png");
 
 		// 버튼에 이미지 삽입
 		bts[0].setIcon(img1);

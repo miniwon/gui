@@ -1,4 +1,4 @@
-package testHbg;
+package testHbg01;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;

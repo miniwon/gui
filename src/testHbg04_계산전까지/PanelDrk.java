@@ -1,4 +1,4 @@
-package testHbg;
+package testHbg04_계산전까지;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;

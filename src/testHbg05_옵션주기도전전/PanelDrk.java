@@ -1,4 +1,4 @@
-package testHbg;
+package testHbg05_옵션주기도전전;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
