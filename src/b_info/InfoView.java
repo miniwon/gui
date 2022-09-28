@@ -114,7 +114,7 @@ public class InfoView {
 	public void eventProc() {
 		bAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "이벤트 발생 Add");
+				inputData();
 			}
 		});
 		bShow.addActionListener(new ActionListener() {
@@ -134,7 +134,7 @@ public class InfoView {
 		});
 		bCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "이벤트 발생 Cancel");
+				clearTextField();
 			}
 		});
 		bExit.addActionListener(new ActionListener() {
@@ -200,13 +200,37 @@ public class InfoView {
 			}
 		});
 	}
+	
+	void clearTextField() {
+		ta.setText(null);
+		tfName.setText(null);
+		tfID.setText(null);
+		tfTel.setText(null);
+		tfGender.setText(null);
+		tfAge.setText(null);
+		tfHome.setText(null);
+	}
+	
+	/*
+	 * 'ADD' 버튼이 눌렸을 때 텍스트필드에 입력한 사용자의값들을 PersonVO에 저장하기
+	 */
 
+	void inputData() {
+		// (1) 각각의 텍스트필드의 입력값을 얻어 오기
+		
+		// (2) 1번의 값들을 PersonVO 필드에 저장(setter / constructor)
+		
+		PersonVO p = new PersonVO(tfName.getText(), tfID.getText(), tfTel.getText(), tfGender.getText(), Integer.parseInt(tfAge.getText()), tfHome.getText());
+		
+	}
+	
+	
 	public static void main(String[] args) {
 
 		InfoView info = new InfoView();
 		info.addLayout();
 		info.eventProc();
-
 	}
+	
 
 }
